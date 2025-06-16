@@ -6,18 +6,36 @@
     <title>Z2Learn - Making a Difference in Learning</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Clash Display Font -->
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        'sans': ['Plus Jakarta Sans', 'sans-serif'],
+                        'display': ['"Clash Display"', 'sans-serif'],
+                        'script': ['Caveat', 'cursive'],
+                        'inter': ['Inter', 'sans-serif']
+                    },
+                    fontSize: {
+                        '7xl': '5rem',
+                        '8xl': '6rem',
+                        '9xl': '8rem',
+                        '10xl': '10rem',
+                    },
                     colors: {
-                        'primary': '#1e3a8a',        // Deep navy blue
-                        'secondary': '#d6c7a8',      // Warm beige  
-                        'accent': '#374151',         // Charcoal gray
-                        'cream': '#f7f5f3',         // Light cream
-                        'taupe': '#a3967a',         // Medium taupe
-                        'navy': '#0f172a',          // Deep navy
-                        'slate': '#64748b',         // Blue-gray
+                        'teal': '#00B2FF',          // Teal blue
+                        'white': '#FFFFFF',         // White
+                        'black': '#000000',         // Black
+                        'teal-dark': '#004C6E',     // Darker teal for hover states
+                        'teal-light': '#0078AD',    // Lighter teal for accents
+                        'gray-light': '#F0F0F0',    // Light gray (close to white) for subtle backgrounds
+                        'gray': '#808080',          // Gray for secondary text
                     },
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
@@ -33,7 +51,6 @@
         }
     </script>
     <style>
-	
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
@@ -60,11 +77,11 @@
         }
         
         .gradient-bg {
-            background: linear-gradient(135deg, #1e3a8a 0%, #374151 100%);
+            background: linear-gradient(135deg, #000000 0%, #005C84 100%);
         }
         
         .hero-gradient {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 30%, #374151 70%, #d6c7a8 100%);
+            background: linear-gradient(135deg, #000000 0%, #002A3D 100%);
         }
         
         .card-hover {
@@ -84,7 +101,7 @@
         }
         
         .text-gradient {
-            background: linear-gradient(135deg, #1e3a8a, #374151);
+            background: linear-gradient(135deg, #005C84, #0078AD);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -168,100 +185,122 @@
         }
         
         .sophisticated-hover:hover {
-            background: linear-gradient(135deg, #1e40af, #6b7280);
+            background: #004C6E;
             transform: translateY(-2px);
+        }
+
+        .script-accent {
+            font-family: 'Caveat', cursive;
+            font-weight: 600;
+            font-size: 1.4em;
+            line-height: 1;
+        }
+
+        .teal-border {
+            border: 2px solid #005C84;
+        }
+
+        .teal-glow {
+            box-shadow: 0 0 15px rgba(0, 92, 132, 0.5);
         }
     </style>
 </head>
-<body class="font-sans bg-cream">
-    <!-- Navigation -->
-    <nav class="bg-white/95 backdrop-blur-sm fixed w-full z-50 elegant-shadow">
+<body class="font-sans bg-white text-black">
+        <!-- Navigation -->
+        <nav class="bg-white fixed w-full z-50 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-3 sm:py-4">
-                <div class="flex items-center">
-                    <div class="bg-gradient-to-r from-primary to-accent p-2 rounded-lg animate-pulse-slow">
-                        <i class="fas fa-graduation-cap text-white text-lg sm:text-xl"></i>
-                    </div>
-                    <span class="ml-2 sm:ml-3 text-xl sm:text-2xl font-bold text-gradient">Z2Learn</span>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
-                    <a href="#home" class="text-accent hover:text-primary transition-colors duration-300 font-medium">Home</a>
-                    <a href="#what-we-do" class="text-accent hover:text-primary transition-colors duration-300 font-medium">What We Do</a>
-                    <a href="#why-works" class="text-accent hover:text-primary transition-colors duration-300 font-medium">Why It Works</a>
-                    <a href="#tools" class="text-accent hover:text-primary transition-colors duration-300 font-medium">Tools</a>
-                    <a href="#contact" class="text-accent hover:text-primary transition-colors duration-300 font-medium">Contact</a>
-                    <a href="https://chat.whatsapp.com/K4kRy8k1IwlBSvjQouStlA" target="_blank" 
-                       class="bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2 rounded-full hover:shadow-lg transition-all duration-300 flex items-center space-x-2 sophisticated-hover">
-                        <i class="fab fa-whatsapp"></i>
-                        <span class="hidden lg:inline">Join Community</span>
-                    </a>
-                    <button class="bg-gradient-to-r from-primary to-accent text-white px-4 lg:px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 sophisticated-hover">
-                        Get Started
-                    </button>
-                </div>
-                
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden text-accent p-2 rounded-lg hover:bg-gray-100 transition-colors mobile-optimized" onclick="toggleMobileMenu()">
-                    <i class="fas fa-bars text-xl"></i>
+            <div class="flex items-center">
+                <!-- 1. Logo image (now bigger) -->
+                <img
+                src="z2.png"
+                alt="Z2Learn Logo"
+                class="h-20 w-auto sm:h-24 mr-4"
+                />
+
+                <!-- 2. Text label -->
+                <span class="text-xl sm:text-2xl font-bold text-black font-display">
+                </span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                <a href="#home" class="text-black hover:text-teal transition-colors duration-300 font-medium">Home</a>
+                <a href="#what-we-do" class="text-black hover:text-teal transition-colors duration-300 font-medium">What We Do</a>
+                <a href="#why-works" class="text-black hover:text-teal transition-colors duration-300 font-medium">Why It Works</a>
+                <a href="#tools" class="text-black hover:text-teal transition-colors duration-300 font-medium">Tools</a>
+                <a href="#contact" class="text-black hover:text-teal transition-colors duration-300 font-medium">Contact</a>
+                <a href="https://chat.whatsapp.com/K4kRy8k1IwlBSvjQouStlA" target="_blank"
+                class="bg-teal text-white px-4 py-2 rounded-full hover:shadow-lg transition-all duration-300 flex items-center space-x-2 hover:bg-teal-dark">
+                <i class="fab fa-whatsapp"></i>
+                <span class="hidden lg:inline">Join Community</span>
+                </a>
+                <button class="bg-teal text-white px-4 lg:px-6 py-2 rounded-full hover:shadow-lg hover:bg-teal-dark transition-all duration-300">
+                Get Started
                 </button>
             </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="mobile-menu fixed inset-y-0 left-0 w-80 bg-white elegant-shadow md:hidden z-50">
-            <div class="p-6">
-                <div class="flex justify-between items-center mb-8">
-                    <span class="text-xl font-bold text-gradient">Z2Learn</span>
-                    <button onclick="toggleMobileMenu()" class="text-accent p-2 rounded-lg hover:bg-gray-100 mobile-optimized">
-                        <i class="fas fa-times text-xl"></i>
-                    </button>
-                </div>
-                <div class="space-y-4">
-                    <a href="#home" class="block text-accent hover:text-primary transition-colors py-3 text-lg mobile-optimized font-medium">Home</a>
-                    <a href="#what-we-do" class="block text-accent hover:text-primary transition-colors py-3 text-lg mobile-optimized font-medium">What We Do</a>
-                    <a href="#why-works" class="block text-accent hover:text-primary transition-colors py-3 text-lg mobile-optimized font-medium">Why It Works</a>
-                    <a href="#tools" class="block text-accent hover:text-primary transition-colors py-3 text-lg mobile-optimized font-medium">Tools</a>
-                    <a href="#contact" class="block text-accent hover:text-primary transition-colors py-3 text-lg mobile-optimized font-medium">Contact</a>
-                    <a href="https://chat.whatsapp.com/K4kRy8k1IwlBSvjQouStlA" target="_blank" 
-                       class="w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-4 rounded-full hover:shadow-lg transition-all flex items-center justify-center space-x-2 mt-4 mobile-optimized">
-                        <i class="fab fa-whatsapp text-xl"></i>
-                        <span>Join Our Community</span>
-                    </a>
-                    <button class="w-full bg-gradient-to-r from-primary to-accent text-white px-6 py-4 rounded-full hover:shadow-lg transition-all mt-2 mobile-optimized">
-                        Get Started
-                    </button>
-                </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-black p-2 rounded-lg hover:bg-gray-light transition-colors mobile-optimized" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
             </div>
         </div>
-    </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="mobile-menu fixed inset-y-0 left-0 w-80 bg-white shadow-xl md:hidden z-50">
+            <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <span class="text-xl font-bold font-display">Z2<span class="text-teal">Learn</span></span>
+                <button onclick="toggleMobileMenu()" class="text-black p-2 rounded-lg hover:bg-gray-light mobile-optimized">
+                <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="space-y-4">
+                <a href="#home" class="block text-black hover:text-teal transition-colors py-3 text-lg mobile-optimized font-medium">Home</a>
+                <a href="#what-we-do" class="block text-black hover:text-teal transition-colors py-3 text-lg mobile-optimized font-medium">What We Do</a>
+                <a href="#why-works" class="block text-black hover:text-teal transition-colors py-3 text-lg mobile-optimized font-medium">Why It Works</a>
+                <a href="#tools" class="block text-black hover:text-teal transition-colors py-3 text-lg mobile-optimized font-medium">Tools</a>
+                <a href="#contact" class="block text-black hover:text-teal transition-colors py-3 text-lg mobile-optimized font-medium">Contact</a>
+                <a href="https://chat.whatsapp.com/K4kRy8k1IwlBSvjQouStlA" target="_blank"
+                class="w-full bg-teal text-white px-6 py-4 rounded-full hover:shadow-lg hover:bg-teal-dark transition-all flex items-center justify-center space-x-2 mt-4 mobile-optimized">
+                <i class="fab fa-whatsapp text-xl"></i>
+                <span>Join Our Community</span>
+                </a>
+                <button class="w-full bg-teal text-white px-6 py-4 rounded-full hover:shadow-lg hover:bg-teal-dark transition-all mt-2 mobile-optimized">
+                Get Started
+                </button>
+            </div>
+            </div>
+        </div>
+        </nav>
 
     <!-- Hero Section -->
-    <section id="home"
-         class="pt-24 md:pt-32 min-h-screen flex items-center relative overflow-hidden">
-    <div class="hero-gradient absolute inset-0 opacity-95"></div>
+    <section id="home" class="pt-28 md:pt-36 min-h-screen flex items-center relative overflow-hidden bg-black text-white">
+        <div class="hero-gradient absolute inset-0"></div>
         
         <!-- Floating Elements -->
-        <div class="absolute top-20 left-4 sm:left-10 w-16 sm:w-20 h-16 sm:h-20 bg-secondary/20 rounded-full blob"></div>
-        <div class="absolute top-32 sm:top-40 right-8 sm:right-20 w-12 sm:w-16 h-12 sm:h-16 bg-taupe/30 rounded-full blob" style="animation-delay: -2s;"></div>
-        <div class="absolute bottom-32 sm:bottom-40 left-8 sm:left-20 w-10 sm:w-12 h-10 sm:h-12 bg-slate/20 rounded-full blob" style="animation-delay: -4s;"></div>
-        <div class="absolute top-60 left-1/2 w-8 sm:w-10 h-8 sm:h-10 bg-accent/10 rounded-full blob animate-rotate-slow"></div>
+        <div class="absolute top-20 left-4 sm:left-10 w-16 sm:w-20 h-16 sm:h-20 bg-teal/20 rounded-full blob"></div>
+        <div class="absolute top-32 sm:top-40 right-8 sm:right-20 w-12 sm:w-16 h-12 sm:h-16 bg-teal/30 rounded-full blob" style="animation-delay: -2s;"></div>
+        <div class="absolute bottom-32 sm:bottom-40 left-8 sm:left-20 w-10 sm:w-12 h-10 sm:h-12 bg-gray/20 rounded-full blob" style="animation-delay: -4s;"></div>
+        <div class="absolute top-60 left-1/2 w-8 sm:w-10 h-8 sm:h-10 bg-white/10 rounded-full blob animate-rotate-slow"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 <div class="text-white hero-content text-center lg:text-left">
-                    <h1 class="mobile-hero-title font-bold mb-4 sm:mb-6 leading-tight">
-                        Master <span class="text-secondary animate-pulse">tomorrow's</span> tech skills—today.
+                   <h1 class="mobile-hero-title font-bold mb-4 sm:mb-6 leading-tight font-display">
+                    Making <span class="text-teal animate-pulse">Difference</span>
+                    <span class="script-accent text-teal text-3xl sm:text-5xl">In Learning.</span>
                     </h1>
+
                     <p class="text-lg sm:text-xl lg:text-2xl mb-6 sm:mb-8 text-gray-200 mobile-text">
-                        Join our hands-on, project-based programs and learn by <em class="text-secondary font-semibold">doing</em>, not just watching.
+                        Join our hands-on, project-based programs and learn by <span class="script-accent text-teal">doing</span>, not just watching.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <button class="bg-white text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:shadow-xl transition-all duration-300 hover:scale-105 mobile-optimized">
+                        <button class="bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:shadow-xl transition-all duration-300 hover:scale-105 mobile-optimized hover:text-teal">
                             Start Learning Now
                         </button>
-                        <button class="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-white hover:text-primary transition-all duration-300 mobile-optimized">
+                        <button class="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-white hover:text-black transition-all duration-300 mobile-optimized">
                             Watch Demo
                         </button>
                     </div>
@@ -269,94 +308,193 @@
                     <!-- WhatsApp Community CTA for Mobile -->
                     <div class="mt-6 sm:mt-8 lg:hidden">
                         <a href="https://chat.whatsapp.com/K4kRy8k1IwlBSvjQouStlA" target="_blank" 
-                           class="inline-flex items-center space-x-3 bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition-all duration-300 mobile-optimized">
+                           class="inline-flex items-center space-x-3 bg-teal text-white px-6 py-3 rounded-full hover:bg-teal-dark transition-all duration-300 mobile-optimized">
                             <i class="fab fa-whatsapp text-xl"></i>
                             <span class="font-semibold">Join Our Learning Community</span>
                         </a>
                     </div>
                 </div>
                 
-                <div class="relative hero-visual mt-8 lg:mt-0">
-                    <div class="glass-effect rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl hover:scale-105 transition-transform duration-500">
-                        <div class="space-y-3 sm:space-y-4">
-                            <div class="flex items-center space-x-2 sm:space-x-3">
-                                <div class="w-3 sm:w-4 h-3 sm:h-4 bg-secondary rounded-full animate-pulse"></div>
-                                <div class="w-3 sm:w-4 h-3 sm:h-4 bg-taupe rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
-                                <div class="w-3 sm:w-4 h-3 sm:h-4 bg-slate rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-                            </div>
-                            <div class="bg-white/20 h-3 sm:h-4 rounded-full animate-pulse"></div>
-                            <div class="bg-white/20 h-3 sm:h-4 rounded-full w-3/4 animate-pulse" style="animation-delay: 0.2s;"></div>
-                            <div class="bg-white/20 h-3 sm:h-4 rounded-full w-1/2 animate-pulse" style="animation-delay: 0.4s;"></div>
-                            
-                            <div class="grid grid-cols-2 gap-3 sm:gap-4 pt-3 sm:pt-4">
-                                <div class="bg-white/20 h-16 sm:h-20 rounded-xl flex items-center justify-center hover:bg-white/30 transition-colors">
-                                    <i class="fas fa-code text-2xl sm:text-3xl text-secondary animate-bounce-slow"></i>
-                                </div>
-                                <div class="bg-white/20 h-16 sm:h-20 rounded-xl flex items-center justify-center hover:bg-white/30 transition-colors">
-                                    <i class="fas fa-lightbulb text-2xl sm:text-3xl text-secondary animate-pulse-slow"></i>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-white/20 h-8 sm:h-10 rounded-full flex items-center justify-center mt-3 sm:mt-4">
-                                <span class="text-xs sm:text-sm font-semibold">Interactive Learning Platform</span>
-                            </div>
-                        </div>
+                            <!-- dashbaord start -->
+
+<div class="relative hero-visual mt-8 lg:mt-0">
+    <div class="bg-white rounded-3xl p-3 sm:p-6 lg:p-8 shadow-2xl hover:scale-105 transition-transform duration-500 border border-gray-200">
+        <!-- Header section - smaller on mobile, normal on desktop -->
+        <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-3 mb-4 sm:mb-6">
+            <div class="bg-teal p-1.5 sm:p-2 rounded-lg">
+                <i class="fas fa-graduation-cap text-white text-base sm:text-lg"></i>
+            </div>
+            <div>
+                <span class="text-base sm:text-lg font-bold text-black">Z2Learn Dashboard</span>
+                <div class="text-[10px] sm:text-xs text-black">Welcome back, santhoshsharuki</div>
+            </div>
+            <div class="ml-0 sm:ml-auto w-full sm:w-auto flex flex-col sm:items-end mt-2 sm:mt-0">
+                <div class="text-[10px] sm:text-xs text-black mb-1">2025-06-15 12:46:19</div>
+                <button class="w-full sm:w-auto bg-teal text-white px-2 py-0.5 sm:px-3 sm:py-1 text-[10px] sm:text-sm rounded-full">
+                    Access Portal
+                </button>
+            </div>
+        </div>
+        
+        <!-- Stats section - smaller on mobile -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 mb-4 sm:mb-6">
+            <div class="bg-gray-100 p-2 sm:p-3 rounded-xl">
+                <div class="text-[10px] sm:text-xs text-black mb-1">Course Completion</div>
+                <div class="flex justify-between items-end">
+                    <span class="text-lg sm:text-2xl font-bold text-black">78%</span>
+                    <div class="flex items-end space-x-1">
+                        <div class="h-4 sm:h-6 w-1 sm:w-1.5 bg-teal rounded-sm"></div>
+                        <div class="h-3 sm:h-4 w-1 sm:w-1.5 bg-teal/60 rounded-sm"></div>
+                        <div class="h-5 sm:h-8 w-1 sm:w-1.5 bg-teal/80 rounded-sm"></div>
                     </div>
                 </div>
+            </div>
+            
+            <div class="bg-gray-100 p-2 sm:p-3 rounded-xl">
+                <div class="text-[10px] sm:text-xs text-black mb-1">Weekly Progress</div>
+                <div class="flex justify-between items-end">
+                    <span class="text-lg sm:text-2xl font-bold text-black">32%</span>
+                    <div class="flex items-end space-x-1">
+                        <div class="h-5 sm:h-7 w-1 sm:w-1.5 bg-teal/80 rounded-sm"></div>
+                        <div class="h-3 sm:h-5 w-1 sm:w-1.5 bg-teal/60 rounded-sm"></div>
+                        <div class="h-2 sm:h-3 w-1 sm:w-1.5 bg-teal rounded-sm"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-100 p-2 sm:p-3 rounded-xl">
+                <div class="text-[10px] sm:text-xs text-black mb-1">Projects Done</div>
+                <div class="flex justify-between items-end">
+                    <span class="text-lg sm:text-2xl font-bold text-black">5</span>
+                    <div class="flex items-end space-x-1">
+                        <div class="h-3 sm:h-4 w-1 sm:w-1.5 bg-teal/60 rounded-sm"></div>
+                        <div class="h-5 sm:h-8 w-1 sm:w-1.5 bg-teal rounded-sm"></div>
+                        <div class="h-4 sm:h-6 w-1 sm:w-1.5 bg-teal/80 rounded-sm"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Learning trend - smaller on mobile -->
+        <div class="bg-teal/10 rounded-xl p-2 sm:p-4 mb-4 sm:mb-6">
+            <div class="flex justify-between items-center mb-2 sm:mb-4">
+                <span class="text-[10px] sm:text-sm font-semibold text-black">Learning Trend</span>
+                <span class="text-[10px] sm:text-xs bg-teal/20 text-black px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-full">+24% ↑</span>
+            </div>
+            <div class="relative h-8 sm:h-12">
+                <!-- Simplified trend line -->
+                <svg class="w-full h-full" viewBox="0 0 100 30" preserveAspectRatio="none">
+                    <path d="M0,25 C10,20 20,28 30,15 C40,5 50,20 60,15 C70,10 80,5 100,2" stroke="#005C84" fill="none" stroke-width="2"></path>
+                </svg>
+            </div>
+            <div class="flex justify-between mt-1 text-[10px] sm:text-xs text-black">
+                <span>Jan</span>
+                <span class="hidden sm:inline">Feb</span>
+                <span>Mar</span>
+                <span class="hidden sm:inline">Apr</span>
+                <span>May</span>
+                <span>Jun</span>
+            </div>
+        </div>
+        
+        <!-- Action panels - smaller on mobile -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4">
+            <div class="bg-teal/10 p-2 sm:p-3 rounded-xl">
+                <div class="flex items-center justify-between mb-1 sm:mb-2">
+                    <span class="text-[10px] sm:text-xs font-semibold text-black">Upcoming Sessions</span>
+                    <i class="fas fa-calendar-check text-teal text-[10px] sm:text-xs"></i>
+                </div>
+                <div class="space-y-1 sm:space-y-2">
+                    <div class="flex items-center space-x-1.5 sm:space-x-2">
+                        <div class="w-0.5 sm:w-1 h-2 sm:h-3 bg-teal rounded-full"></div>
+                        <span class="text-[10px] sm:text-xs text-black">Web Dev - 10:00 AM</span>
+                    </div>
+                    <div class="flex items-center space-x-1.5 sm:space-x-2">
+                        <div class="w-0.5 sm:w-1 h-2 sm:h-3 bg-teal rounded-full"></div>
+                        <span class="text-[10px] sm:text-xs text-black">AI Workshop - 2:00 PM</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gray-100 p-2 sm:p-3 rounded-xl">
+                <div class="flex items-center justify-between mb-1 sm:mb-2">
+                    <span class="text-[10px] sm:text-xs font-semibold text-black">Quick Actions</span>
+                    <i class="fas fa-bolt text-teal text-[10px] sm:text-xs"></i>
+                </div>
+                <div class="grid grid-cols-2 gap-1 sm:gap-2">
+                    <button class="bg-white text-[10px] sm:text-xs py-0.5 sm:py-1 rounded text-black border border-gray-200 hover:bg-teal/10 transition-colors">Resume Course</button>
+                    <button class="bg-white text-[10px] sm:text-xs py-0.5 sm:py-1 rounded text-black border border-gray-200 hover:bg-teal/10 transition-colors">View Projects</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer with user info - smaller on mobile -->
+        <div class="mt-3 sm:mt-4 pt-1 sm:pt-2 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-start sm:items-center">
+            <div class="text-[9px] sm:text-xs text-black mb-0.5 sm:mb-0">
+                <i class="fas fa-user-circle text-teal mr-1"></i> User: santhoshsharuki
+            </div>
+            <div class="text-[9px] sm:text-xs text-black">
+                <i class="fas fa-clock text-teal mr-1"></i> Last login: 2025-06-15 12:46:19
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- dashbaord end -->
+
             </div>
         </div>
     </section>
 
     <!-- What We Do Section -->
-    <section id="what-we-do" class="py-16 sm:py-20 bg-cream">
+    <section id="what-we-do" class="py-16 sm:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 sm:mb-16 stagger-animation">
-                <h2 class="mobile-title font-bold text-navy mb-4 sm:mb-6">What We Do</h2>
-                <p class="mobile-text text-accent max-w-3xl mx-auto">
+                <h2 class="mobile-title font-bold text-black mb-4 sm:mb-6 font-display">What We <span class="text-teal">Do</span></h2>
+                <p class="mobile-text text-black max-w-3xl mx-auto">
                     At Z2Learn we re-imagine education so <strong>anyone</strong> can understand and apply technology. We deliver knowledge through:
                 </p>
             </div>
             
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-                <div class="bg-white rounded-2xl p-6 sm:p-8 elegant-shadow card-hover" data-delay="0">
-                    <div class="bg-gradient-to-br from-primary to-accent p-3 sm:p-4 rounded-2xl inline-block mb-4 sm:mb-6 animate-pulse-slow">
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-md card-hover border border-gray-light" data-delay="0">
+                    <div class="bg-teal p-3 sm:p-4 rounded-2xl inline-block mb-4 sm:mb-6 animate-pulse-slow">
                         <i class="fas fa-book-open text-white text-xl sm:text-2xl"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-navy mb-3 sm:mb-4">Full Courses</h3>
-                    <p class="text-accent text-sm sm:text-base">Deep-dive, instructor-led cohorts for comprehensive learning</p>
+                    <h3 class="text-lg sm:text-xl font-bold text-black mb-3 sm:mb-4">Full Courses</h3>
+                    <p class="text-black text-sm sm:text-base">Deep-dive, instructor-led cohorts for comprehensive learning</p>
                 </div>
                 
-                <div class="bg-white rounded-2xl p-6 sm:p-8 elegant-shadow card-hover" data-delay="100">
-                    <div class="bg-gradient-to-br from-accent to-slate p-3 sm:p-4 rounded-2xl inline-block mb-4 sm:mb-6 animate-pulse-slow">
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-md card-hover border border-gray-light" data-delay="100">
+                    <div class="bg-teal p-3 sm:p-4 rounded-2xl inline-block mb-4 sm:mb-6 animate-pulse-slow">
                         <i class="fas fa-video text-white text-xl sm:text-2xl"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-navy mb-3 sm:mb-4">Live Webinars</h3>
-                    <p class="text-accent text-sm sm:text-base">Bite-sized, topic-focused sessions for quick learning</p>
+                    <h3 class="text-lg sm:text-xl font-bold text-black mb-3 sm:mb-4">Live Webinars</h3>
+                    <p class="text-black text-sm sm:text-base">Bite-sized, topic-focused sessions for quick learning</p>
                 </div>
                 
-                <div class="bg-white rounded-2xl p-6 sm:p-8 elegant-shadow card-hover" data-delay="200">
-                    <div class="bg-gradient-to-br from-taupe to-secondary p-3 sm:p-4 rounded-2xl inline-block mb-4 sm:mb-6 animate-pulse-slow">
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-md card-hover border border-gray-light" data-delay="200">
+                    <div class="bg-teal p-3 sm:p-4 rounded-2xl inline-block mb-4 sm:mb-6 animate-pulse-slow">
                         <i class="fas fa-tools text-white text-xl sm:text-2xl"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-navy mb-3 sm:mb-4">Weekend Workshops</h3>
-                    <p class="text-accent text-sm sm:text-base">Rapid skill boosters for busy professionals</p>
+                    <h3 class="text-lg sm:text-xl font-bold text-black mb-3 sm:mb-4">Weekend Workshops</h3>
+                    <p class="text-black text-sm sm:text-base">Rapid skill boosters for busy professionals</p>
                 </div>
                 
-                <div class="bg-white rounded-2xl p-6 sm:p-8 elegant-shadow card-hover" data-delay="300">
-                    <div class="bg-gradient-to-br from-slate to-primary p-3 sm:p-4 rounded-2xl inline-block mb-4 sm:mb-6 animate-pulse-slow">
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-md card-hover border border-gray-light" data-delay="300">
+                    <div class="bg-teal p-3 sm:p-4 rounded-2xl inline-block mb-4 sm:mb-6 animate-pulse-slow">
                         <i class="fas fa-bolt text-white text-xl sm:text-2xl"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-navy mb-3 sm:mb-4">Flash Courses</h3>
-                    <p class="text-accent text-sm sm:text-base">2-hour micro-classes for busy creators</p>
+                    <h3 class="text-lg sm:text-xl font-bold text-black mb-3 sm:mb-4">Flash Courses</h3>
+                    <p class="text-black text-sm sm:text-base">2-hour micro-classes for busy creators</p>
                 </div>
             </div>
             
             <div class="text-center mt-8 sm:mt-12 stagger-animation">
-                <p class="mobile-text text-accent mb-6">
+                <p class="mobile-text text-black mb-6">
                     Every format is <strong>100% online</strong> and comes with downloadable resources, community support, and an end-of-module project.
                 </p>
                 <a href="https://chat.whatsapp.com/K4kRy8k1IwlBSvjQouStlA" target="_blank" 
-                   class="inline-flex items-center space-x-2 bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 mobile-optimized sophisticated-hover">
+                   class="inline-flex items-center space-x-2 bg-teal text-white px-6 py-3 rounded-full hover:shadow-lg hover:bg-teal-dark transition-all duration-300 mobile-optimized">
                     <i class="fab fa-whatsapp text-lg"></i>
                     <span>Ask Questions in Our Community</span>
                 </a>
@@ -365,123 +503,99 @@
     </section>
 
     <!-- Why It Works Section -->
-    <section id="why-works" class="py-16 sm:py-20 bg-white">
+    <section id="why-works" class="py-16 sm:py-20 bg-black text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 sm:mb-16 stagger-animation">
-                <h2 class="mobile-title font-bold text-navy mb-4 sm:mb-6">Why It Works</h2>
-                <p class="mobile-text text-accent">Our proven methodology delivers real results</p>
+                <h2 class="mobile-title font-bold text-white mb-4 sm:mb-6 font-display">Why It <span class="text-teal">Works</span></h2>
+                <p class="mobile-text text-white">Our proven methodology delivers real results</p>
             </div>
             
-            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 Align-items-center">
                 <div class="space-y-6 sm:space-y-8">
                     <div class="flex items-start space-x-4 stagger-animation" data-delay="0">
-                        <div class="bg-gradient-to-br from-primary to-accent p-3 rounded-xl flex-shrink-0 animate-pulse-slow">
+                        <div class="bg-teal p-3 rounded-xl flex-shrink-0 animate-pulse-slow">
                             <i class="fas fa-hands text-white text-lg sm:text-xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg sm:text-xl font-bold text-navy mb-2">Hands-On Experience</h3>
-                            <p class="text-accent text-sm sm:text-base">Build real apps, UIs, and prototypes from day one.</p>
+                            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Hands-On Experience</h3>
+                            <p class="text-gray-300 text-sm sm:text-base">Build real apps, UIs, and prototypes from day one.</p>
                         </div>
                     </div>
                     
                     <div class="flex items-start space-x-4 stagger-animation" data-delay="100">
-                        <div class="bg-gradient-to-br from-accent to-slate p-3 rounded-xl flex-shrink-0 animate-pulse-slow">
+                        <div class="bg-teal p-3 rounded-xl flex-shrink-0 animate-pulse-slow">
                             <i class="fas fa-project-diagram text-white text-lg sm:text-xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg sm:text-xl font-bold text-navy mb-2">Real-World Projects</h3>
-                            <p class="text-accent text-sm sm:text-base">Every lesson ends with something you can <em>show</em>.</p>
+                            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Real-World Projects</h3>
+                            <p class="text-gray-300 text-sm sm:text-base">Every lesson ends with something you can <span class="script-accent text-teal">show</span>.</p>
                         </div>
                     </div>
                     
                     <div class="flex items-start space-x-4 stagger-animation" data-delay="200">
-                        <div class="bg-gradient-to-br from-taupe to-secondary p-3 rounded-xl flex-shrink-0 animate-pulse-slow">
+                        <div class="bg-teal p-3 rounded-xl flex-shrink-0 animate-pulse-slow">
                             <i class="fas fa-user-graduate text-white text-lg sm:text-xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg sm:text-xl font-bold text-navy mb-2">Mentor Feedback</h3>
-                            <p class="text-accent text-sm sm:text-base">Get direct, actionable critiques within 24 hours.</p>
+                            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Mentor Feedback</h3>
+                            <p class="text-gray-300 text-sm sm:text-base">Get direct, actionable critiques within 24 hours.</p>
                         </div>
                     </div>
                     
                     <div class="flex items-start space-x-4 stagger-animation" data-delay="300">
-                        <div class="bg-gradient-to-br from-slate to-primary p-3 rounded-xl flex-shrink-0 animate-pulse-slow">
+                        <div class="bg-teal p-3 rounded-xl flex-shrink-0 animate-pulse-slow">
                             <i class="fas fa-users text-white text-lg sm:text-xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg sm:text-xl font-bold text-navy mb-2">Community Power</h3>
-                            <p class="text-accent text-sm sm:text-base">Collaborate with peers in our growing maker network.</p>
+                            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Community Power</h3>
+                            <p class="text-gray-300 text-sm sm:text-base">Collaborate with peers in our growing maker network.</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="relative mt-8 lg:mt-0 stagger-animation">
-                    <div class="bg-gradient-to-br from-secondary/20 to-taupe/20 rounded-3xl p-6 sm:p-8">
-                        <div class="space-y-4 sm:space-y-6">
-                            <div class="bg-white rounded-2xl p-4 sm:p-6 elegant-shadow card-hover">
-                                <div class="flex items-center space-x-3 mb-3 sm:mb-4">
-                                    <div class="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-                                    <span class="font-semibold text-sm sm:text-base text-navy">Project: E-commerce App</span>
-                                </div>
-                                <div class="bg-cream h-24 sm:h-32 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-shopping-cart text-primary text-2xl sm:text-3xl animate-bounce-slow"></i>
-                                </div>
-                            </div>
-                            
-                            <div class="bg-white rounded-2xl p-4 sm:p-6 elegant-shadow card-hover">
-                                <div class="flex items-center space-x-3 mb-3 sm:mb-4">
-                                    <div class="w-3 h-3 bg-accent rounded-full animate-pulse"></div>
-                                    <span class="font-semibold text-sm sm:text-base text-navy">Project: Portfolio Website</span>
-                                </div>
-                                <div class="bg-cream h-24 sm:h-32 rounded-lg flex items-center justify-center">
-                                    <i class="fas fa-palette text-accent text-2xl sm:text-3xl animate-pulse-slow"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>
 
     <!-- Learning Tools Section -->
-    <section id="tools" class="py-16 sm:py-20 bg-cream">
+    <section id="tools" class="py-16 sm:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 sm:mb-16 stagger-animation">
-                <h2 class="mobile-title font-bold text-navy mb-4 sm:mb-6">Our Learning Tools</h2>
-                <p class="mobile-text text-accent">Powered by cutting-edge technology to accelerate your learning</p>
+                <h2 class="mobile-title font-bold text-black mb-4 sm:mb-6 font-display">Our Learning <span class="text-teal">Tools</span></h2>
+                <p class="mobile-text text-black">Powered by cutting-edge technology to accelerate your learning</p>
             </div>
             
             <div class="grid lg:grid-cols-3 gap-6 sm:gap-8">
-                <div class="bg-white rounded-2xl p-6 sm:p-8 elegant-shadow card-hover" data-delay="0">
-                    <div class="bg-gradient-to-br from-primary to-slate p-3 sm:p-4 rounded-2xl inline-block mb-4 sm:mb-6 animate-rotate-slow">
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-md card-hover border border-gray-light" data-delay="0">
+                    <div class="bg-teal p-3 sm:p-4 rounded-2xl inline-block mb-4 sm:mb-6 animate-rotate-slow">
                         <i class="fas fa-route text-white text-xl sm:text-2xl"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-navy mb-3 sm:mb-4">Z2Learn Roadmap Generator</h3>
-                    <p class="text-accent text-sm sm:text-base mb-4">Auto-creates a personalized study path based on your goals.</p>
-                    <div class="bg-cream rounded-lg p-3 text-xs text-slate">
+                    <h3 class="text-lg sm:text-xl font-bold text-black mb-3 sm:mb-4">Z2Learn Roadmap Generator</h3>
+                    <p class="text-black text-sm sm:text-base mb-4">Auto-creates a personalized study path based on your goals.</p>
+                    <div class="bg-gray-light rounded-lg p-3 text-xs text-gray">
                         <i class="fas fa-magic mr-2"></i>AI-Powered Personalization
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-2xl p-6 sm:p-8 elegant-shadow card-hover" data-delay="100">
-                    <div class="bg-gradient-to-br from-accent to-taupe p-3 sm:p-4 rounded-2xl inline-block mb-4 sm:mb-6 animate-pulse-slow">
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-md card-hover border border-gray-light" data-delay="100">
+                    <div class="bg-teal p-3 sm:p-4 rounded-2xl inline-block mb-4 sm:mb-6 animate-pulse-slow">
                         <i class="fas fa-robot text-white text-xl sm:text-2xl"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-navy mb-3 sm:mb-4">Z2Learn AI Tutor</h3>
-                    <p class="text-accent text-sm sm:text-base mb-4">Answers questions, reviews code, and suggests next steps in real time.</p>
-                    <div class="bg-cream rounded-lg p-3 text-xs text-slate">
+                    <h3 class="text-lg sm:text-xl font-bold text-black mb-3 sm:mb-4">Z2Learn AI Tutor</h3>
+                    <p class="text-black text-sm sm:text-base mb-4">Answers questions, reviews code, and suggests next steps in real time.</p>
+                    <div class="bg-gray-light rounded-lg p-3 text-xs text-gray">
                         <i class="fas fa-clock mr-2"></i>24/7 Available Support
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-2xl p-6 sm:p-8 elegant-shadow card-hover" data-delay="200">
-                    <div class="bg-gradient-to-br from-taupe to-primary p-3 sm:p-4 rounded-2xl inline-block mb-4 sm:mb-6 animate-bounce-slow">
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-md card-hover border border-gray-light" data-delay="200">
+                    <div class="bg-teal p-3 sm:p-4 rounded-2xl inline-block mb-4 sm:mb-6 animate-bounce-slow">
                         <i class="fas fa-database text-white text-xl sm:text-2xl"></i>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-navy mb-3 sm:mb-4">Resource Hub</h3>
-                    <p class="text-accent text-sm sm:text-base mb-4">Curated templates, design kits, and starter repos—free for all learners.</p>
-                    <div class="bg-cream rounded-lg p-3 text-xs text-slate">
+                    <h3 class="text-lg sm:text-xl font-bold text-black mb-3 sm:mb-4">Resource Hub</h3>
+                    <p class="text-black text-sm sm:text-base mb-4">Curated templates, design kits, and starter repos—free for all learners.</p>
+                    <div class="bg-gray-light rounded-lg p-3 text-xs text-gray">
                         <i class="fas fa-download mr-2"></i>Instantly Downloadable
                     </div>
                 </div>
@@ -489,7 +603,7 @@
             
             <div class="text-center mt-8 sm:mt-12">
                 <a href="https://chat.whatsapp.com/K4kRy8k1IwlBSvjQouStlA" target="_blank" 
-                   class="inline-flex items-center space-x-2 bg-gradient-to-r from-slate to-primary text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 mobile-optimized sophisticated-hover">
+                   class="inline-flex items-center space-x-2 bg-teal text-white px-6 py-3 rounded-full hover:shadow-lg hover:bg-teal-dark transition-all duration-300 mobile-optimized">
                     <i class="fas fa-tools text-lg"></i>
                     <span>Explore Tools with Community</span>
                 </a>
@@ -498,43 +612,43 @@
     </section>
 
     <!-- Success Stats Section -->
-    <section class="py-16 sm:py-20 bg-gradient-to-br from-navy via-primary to-accent text-white relative overflow-hidden">
+    <section class="py-16 sm:py-20 bg-black text-white relative overflow-hidden">
         <!-- Animated background elements -->
         <div class="absolute top-10 left-10 w-32 h-32 bg-white/5 rounded-full animate-float"></div>
         <div class="absolute bottom-10 right-10 w-24 h-24 bg-white/5 rounded-full animate-float" style="animation-delay: -3s;"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="text-center mb-12 sm:mb-16 stagger-animation">
-                <h2 class="mobile-title font-bold mb-4 sm:mb-6">Success by the Numbers</h2>
+                <h2 class="mobile-title font-bold mb-4 sm:mb-6 font-display">Success by the <span class="text-teal">Numbers</span></h2>
                 <p class="mobile-text text-gray-300">Join thousands of learners who've transformed their careers</p>
             </div>
             
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                 <div class="text-center stagger-animation">
-                    <div class="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary mb-2 sm:mb-4 animate-bounce-slow">50+</div>
-                    <p class="text-base sm:text-xl font-medium">Successful Graduates</p>
+                    <div class="text-4xl sm:text-5xl lg:text-6xl font-bold text-teal mb-2 sm:mb-4 animate-bounce-slow font-display">50+</div>
+                    <p class="text-base sm:text-xl font-medium">Course completed</p>
                 </div>
                 
                 <div class="text-center stagger-animation">
-                    <div class="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary mb-2 sm:mb-4 animate-bounce-slow" style="animation-delay: 0.5s;">500+</div>
+                    <div class="text-4xl sm:text-5xl lg:text-6xl font-bold text-teal mb-2 sm:mb-4 animate-bounce-slow font-display" style="animation-delay: 0.5s;">500+</div>
                     <p class="text-base sm:text-xl font-medium">Active Community Members</p>
                 </div>
                 
                 <div class="text-center stagger-animation">
-                    <div class="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary mb-2 sm:mb-4 animate-bounce-slow" style="animation-delay: 1s;">30+</div>
+                    <div class="text-4xl sm:text-5xl lg:text-6xl font-bold text-teal mb-2 sm:mb-4 animate-bounce-slow font-display" style="animation-delay: 1s;">30+</div>
                     <p class="text-base sm:text-xl font-medium">Expert-Led Webinars</p>
                 </div>
                 
                 <div class="text-center stagger-animation">
-                    <div class="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary mb-2 sm:mb-4 animate-bounce-slow" style="animation-delay: 1.5s;">20+</div>
+                    <div class="text-4xl sm:text-5xl lg:text-6xl font-bold text-teal mb-2 sm:mb-4 animate-bounce-slow font-display" style="animation-delay: 1.5s;">20+</div>
                     <p class="text-base sm:text-xl font-medium">Cohort Courses</p>
                 </div>
             </div>
             
             <div class="text-center mt-8 sm:mt-12">
                 <a href="https://chat.whatsapp.com/K4kRy8k1IwlBSvjQouStlA" target="_blank" 
-                   class="inline-flex items-center space-x-3 bg-white text-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:shadow-xl transition-all duration-300 hover:scale-105 mobile-optimized">
-                    <i class="fab fa-whatsapp text-green-600 text-xl"></i>
+                   class="inline-flex items-center space-x-3 bg-white text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:text-teal mobile-optimized">
+                    <i class="fab fa-whatsapp text-teal text-xl"></i>
                     <span>Connect with Our Success Stories</span>
                 </a>
             </div>
@@ -545,48 +659,48 @@
     <section class="py-16 sm:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 sm:mb-16 stagger-animation">
-                <h2 class="mobile-title font-bold text-navy mb-4 sm:mb-6">Ready to Start?</h2>
-                <p class="mobile-text text-accent">Your learning journey begins in just three simple steps</p>
+                <h2 class="mobile-title font-bold text-black mb-4 sm:mb-6 font-display">Ready to <span class="text-teal">Start</span>?</h2>
+                <p class="mobile-text text-black">Your learning journey begins in just three simple steps</p>
             </div>
             
             <div class="grid lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
                 <div class="text-center stagger-animation" data-delay="0">
-                    <div class="bg-gradient-to-br from-primary to-accent w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 animate-pulse-slow">
+                    <div class="bg-teal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 animate-pulse-slow">
                         <span class="text-white font-bold text-xl">1</span>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-navy mb-3 sm:mb-4">Pick a Format</h3>
-                    <p class="text-accent text-sm sm:text-base">Choose the learning format that suits your schedule and learning style.</p>
+                    <h3 class="text-lg sm:text-xl font-bold text-black mb-3 sm:mb-4">Pick a Format</h3>
+                    <p class="text-black text-sm sm:text-base">Choose the learning format that suits your schedule and learning style.</p>
                 </div>
                 
                 <div class="text-center stagger-animation" data-delay="100">
-                    <div class="bg-gradient-to-br from-accent to-slate w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 animate-pulse-slow">
+                    <div class="bg-teal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 animate-pulse-slow">
                         <span class="text-white font-bold text-xl">2</span>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-navy mb-3 sm:mb-4">Fill Enrollment Form</h3>
-                    <p class="text-accent text-sm sm:text-base">Complete our quick enrollment form to get started on your journey.</p>
+                    <h3 class="text-lg sm:text-xl font-bold text-black mb-3 sm:mb-4">Fill Enrollment Form</h3>
+                    <p class="text-black text-sm sm:text-base">Complete our quick enrollment form to get started on your journey.</p>
                 </div>
                 
                 <div class="text-center stagger-animation" data-delay="200">
-                    <div class="bg-gradient-to-br from-taupe to-secondary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 animate-pulse-slow">
+                    <div class="bg-teal w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 animate-pulse-slow">
                         <span class="text-white font-bold text-xl">3</span>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-navy mb-3 sm:mb-4">Begin Building</h3>
-                    <p class="text-accent text-sm sm:text-base">Get your welcome kit and start building amazing projects!</p>
+                    <h3 class="text-lg sm:text-xl font-bold text-black mb-3 sm:mb-4">Begin Building</h3>
+                    <p class="text-black text-sm sm:text-base">Get your welcome kit and start building amazing projects!</p>
                 </div>
             </div>
             
             <div class="text-center stagger-animation">
-                <blockquote class="text-lg sm:text-xl lg:text-2xl text-accent italic mb-6 sm:mb-8 max-w-4xl mx-auto mobile-text">
+                <blockquote class="text-lg sm:text-xl lg:text-2xl text-black italic mb-6 sm:mb-8 max-w-4xl mx-auto mobile-text font-script">
                     "Education should be practical, affordable, and fun. Let's build your future—together."
                 </blockquote>
-                <p class="text-slate mb-6 sm:mb-8">– Team Z2Learn</p>
+                <p class="text-gray mb-6 sm:mb-8">– Team Z2Learn</p>
                 
                 <div class="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
-                    <button class="w-full sm:w-auto bg-gradient-to-r from-primary to-accent text-white px-8 sm:px-12 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-xl transition-all duration-300 hover:scale-105 mobile-optimized sophisticated-hover">
+                    <button class="w-full sm:w-auto bg-teal text-white px-8 sm:px-12 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-xl hover:bg-teal-dark transition-all duration-300 hover:scale-105 mobile-optimized">
                         Start Your Journey Today
                     </button>
                     <a href="https://chat.whatsapp.com/K4kRy8k1IwlBSvjQouStlA" target="_blank" 
-                       class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 border-2 border-primary text-primary px-8 sm:px-12 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-primary hover:text-white transition-all duration-300 mobile-optimized">
+                       class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 border-2 border-teal text-teal px-8 sm:px-12 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-teal hover:text-white transition-all duration-300 mobile-optimized">
                         <i class="fab fa-whatsapp"></i>
                         <span>Chat with Us First</span>
                     </a>
@@ -596,77 +710,77 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 sm:py-20 bg-cream">
+    <section id="contact" class="py-16 sm:py-20 bg-black text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 sm:mb-16 stagger-animation">
-                <h2 class="mobile-title font-bold text-navy mb-4 sm:mb-6">Contact Us</h2>
-                <p class="mobile-text text-accent">Ready to transform your tech skills? Get in touch with us!</p>
+                <h2 class="mobile-title font-bold text-white mb-4 sm:mb-6 font-display">Contact <span class="text-teal">Us</span></h2>
+                <p class="mobile-text text-gray-300">Ready to transform your tech skills? Get in touch with us!</p>
             </div>
             
             <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
                 <div class="space-y-6 sm:space-y-8">
                     <div class="flex items-start space-x-4 stagger-animation" data-delay="0">
-                        <div class="bg-gradient-to-br from-primary to-accent p-3 rounded-xl flex-shrink-0">
+                        <div class="bg-teal p-3 rounded-xl flex-shrink-0">
                             <i class="fas fa-envelope text-white text-lg sm:text-xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg sm:text-xl font-bold text-navy mb-2">Email</h3>
-                            <p class="text-accent text-sm sm:text-base">z2learn.office@gmail.com</p>
+                            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Email</h3>
+                            <p class="text-gray-300 text-sm sm:text-base">z2learn.office@gmail.com</p>
                         </div>
                     </div>
                     
                     <div class="flex items-start space-x-4 stagger-animation" data-delay="100">
-                        <div class="bg-gradient-to-br from-accent to-slate p-3 rounded-xl flex-shrink-0">
+                        <div class="bg-teal p-3 rounded-xl flex-shrink-0">
                             <i class="fas fa-phone text-white text-lg sm:text-xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg sm:text-xl font-bold text-navy mb-2">Phone / WhatsApp</h3>
-                            <p class="text-accent text-sm sm:text-base">+91 93602 20928 | +91 81109 60489</p>
+                            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Phone / WhatsApp</h3>
+                            <p class="text-gray-300 text-sm sm:text-base">+91 93602 20928 | +91 81109 60489</p>
                         </div>
                     </div>
                     
                     <div class="flex items-start space-x-4 stagger-animation" data-delay="200">
-                        <div class="bg-gradient-to-br from-taupe to-secondary p-3 rounded-xl flex-shrink-0">
+                        <div class="bg-teal p-3 rounded-xl flex-shrink-0">
                             <i class="fas fa-map-marker-alt text-white text-lg sm:text-xl"></i>
                         </div>
                         <div>
-                            <h3 class="text-lg sm:text-xl font-bold text-navy mb-2">Address</h3>
-                            <p class="text-accent text-sm sm:text-base">18/17-Pattariyar North St, Kottar, Nagercoil, Tamil Nadu, India</p>
+                            <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Address</h3>
+                            <p class="text-gray-300 text-sm sm:text-base">18/17-Pattariyar North St, Kottar, Nagercoil, Tamil Nadu, India</p>
                         </div>
                     </div>
                     
                     <div class="flex space-x-4 pt-6 sm:pt-8 stagger-animation" data-delay="300">
-                        <a href="#" class="bg-gradient-to-br from-primary to-accent p-3 rounded-xl text-white hover:shadow-lg transition-all duration-300 hover:scale-110 mobile-optimized">
+                        <a href="#" class="bg-teal p-3 rounded-xl text-white hover:shadow-lg transition-all duration-300 hover:scale-110 mobile-optimized">
                             <i class="fab fa-linkedin text-lg sm:text-xl"></i>
                         </a>
-                        <a href="#" class="bg-gradient-to-br from-accent to-slate p-3 rounded-xl text-white hover:shadow-lg transition-all duration-300 hover:scale-110 mobile-optimized">
+                        <a href="#" class="bg-teal p-3 rounded-xl text-white hover:shadow-lg transition-all duration-300 hover:scale-110 mobile-optimized">
                             <i class="fab fa-instagram text-lg sm:text-xl"></i>
                         </a>
-                        <a href="#" class="bg-gradient-to-br from-slate to-primary p-3 rounded-xl text-white hover:shadow-lg transition-all duration-300 hover:scale-110 mobile-optimized">
+                        <a href="#" class="bg-teal p-3 rounded-xl text-white hover:shadow-lg transition-all duration-300 hover:scale-110 mobile-optimized">
                             <i class="fab fa-twitter text-lg sm:text-xl"></i>
                         </a>
                         <a href="https://chat.whatsapp.com/K4kRy8k1IwlBSvjQouStlA" target="_blank" 
-                           class="bg-gradient-to-br from-green-600 to-green-700 p-3 rounded-xl text-white hover:shadow-lg transition-all duration-300 hover:scale-110 mobile-optimized">
+                           class="bg-teal p-3 rounded-xl text-white hover:shadow-lg transition-all duration-300 hover:scale-110 mobile-optimized">
                             <i class="fab fa-whatsapp text-lg sm:text-xl"></i>
                         </a>
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-2xl p-6 sm:p-8 elegant-shadow stagger-animation">
+                <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg stagger-animation text-black">
                     <form class="space-y-4 sm:space-y-6">
                         <div>
-                            <label class="block text-navy font-semibold mb-2 text-sm sm:text-base">Name</label>
-                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all mobile-optimized text-sm sm:text-base">
+                            <label class="block text-black font-semibold mb-2 text-sm sm:text-base">Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-light rounded-lg focus:ring-2 focus:ring-teal focus:border-transparent transition-all mobile-optimized text-sm sm:text-base">
                         </div>
                         
                         <div>
-                            <label class="block text-navy font-semibold mb-2 text-sm sm:text-base">Email</label>
-                            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all mobile-optimized text-sm sm:text-base">
+                            <label class="block text-black font-semibold mb-2 text-sm sm:text-base">Email</label>
+                            <input type="email" class="w-full px-4 py-3 border border-gray-light rounded-lg focus:ring-2 focus:ring-teal focus:border-transparent transition-all mobile-optimized text-sm sm:text-base">
                         </div>
                         
                         <div>
-                            <label class="block text-navy font-semibold mb-2 text-sm sm:text-base">Interested In</label>
-                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all mobile-optimized text-sm sm:text-base">
+                            <label class="block text-black font-semibold mb-2 text-sm sm:text-base">Interested In</label>
+                            <select class="w-full px-4 py-3 border border-gray-light rounded-lg focus:ring-2 focus:ring-teal focus:border-transparent transition-all mobile-optimized text-sm sm:text-base">
                                 <option>Full Courses</option>
                                 <option>Live Webinars</option>
                                 <option>Weekend Workshops</option>
@@ -675,11 +789,11 @@
                         </div>
                         
                         <div>
-                            <label class="block text-navy font-semibold mb-2 text-sm sm:text-base">Message</label>
-                            <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all mobile-optimized text-sm sm:text-base"></textarea>
+                            <label class="block text-black font-semibold mb-2 text-sm sm:text-base">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 border border-gray-light rounded-lg focus:ring-2 focus:ring-teal focus:border-transparent transition-all mobile-optimized text-sm sm:text-base"></textarea>
                         </div>
                         
-                        <button type="submit" class="w-full bg-gradient-to-r from-primary to-accent text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105 mobile-optimized text-sm sm:text-base sophisticated-hover">
+                        <button type="submit" class="w-full bg-teal text-white py-3 rounded-lg font-semibold hover:shadow-lg hover:bg-teal-dark transition-all duration-300 hover:scale-105 mobile-optimized">
                             Send Message
                         </button>
                     </form>
@@ -690,35 +804,35 @@
 
     <!-- Floating WhatsApp Button -->
     <a href="https://chat.whatsapp.com/K4kRy8k1IwlBSvjQouStlA" target="_blank" 
-       class="whatsapp-float bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 mobile-optimized">
+       class="whatsapp-float bg-teal hover:bg-teal-dark text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 mobile-optimized">
         <i class="fab fa-whatsapp text-2xl"></i>
     </a>
 
     <!-- Footer -->
-    <footer class="bg-navy text-white py-8 sm:py-12">
+    <footer class="bg-black text-white py-8 sm:py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                 <div class="sm:col-span-2">
                     <div class="flex items-center mb-4">
-                        <div class="bg-gradient-to-r from-primary to-accent p-2 rounded-lg">
+                        <div class="bg-teal p-2 rounded-lg">
                             <i class="fas fa-graduation-cap text-white text-lg sm:text-xl"></i>
                         </div>
-                        <span class="ml-3 text-xl sm:text-2xl font-bold">Z2Learn</span>
+                        <span class="ml-3 text-xl sm:text-2xl font-bold font-display">Z2<span class="text-teal">Learn</span></span>
                     </div>
                     <p class="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">Making a Difference in Learning</p>
                     <p class="text-gray-400 mb-4 text-sm sm:text-base">Follow us for daily tips and event updates:</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-secondary transition-colors duration-300">
+                        <a href="https://in.linkedin.com/company/z2learn" class="text-gray-400 hover:text-teal transition-colors duration-300">
                             <i class="fab fa-linkedin text-lg sm:text-xl"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-secondary transition-colors duration-300">
+                        <a href="https://www.instagram.com/z2learn/" class="text-gray-400 hover:text-teal transition-colors duration-300">
                             <i class="fab fa-instagram text-lg sm:text-xl"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-secondary transition-colors duration-300">
+                        <a href="https://x.com/z2learn" class="text-gray-400 hover:text-teal transition-colors duration-300">
                             <i class="fab fa-twitter text-lg sm:text-xl"></i>
                         </a>
                         <a href="https://chat.whatsapp.com/K4kRy8k1IwlBSvjQouStlA" target="_blank" 
-                           class="text-gray-400 hover:text-green-500 transition-colors duration-300">
+                           class="text-gray-400 hover:text-teal transition-colors duration-300">
                             <i class="fab fa-whatsapp text-lg sm:text-xl"></i>
                         </a>
                     </div>
@@ -745,6 +859,7 @@
             
             <div class="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center">
                 <p class="text-gray-400 text-sm sm:text-base">© 2025 Z2Learn EdTech. All rights reserved.</p>
+                <p class="text-gray-400 text-xs mt-2">Last updated: 2025-06-15 by @santhoshsharuk</p>
             </div>
         </div>
     </footer>
@@ -782,14 +897,14 @@
             
             // Navigation backdrop and hide/show
             if (currentScrollY > 100) {
-                nav.classList.add('backdrop-blur-md');
+                nav.classList.add('shadow-lg');
                 if (currentScrollY > lastScrollY && currentScrollY > 200) {
                     nav.style.transform = 'translateY(-100%)';
                 } else {
                     nav.style.transform = 'translateY(0)';
                 }
             } else {
-                nav.classList.remove('backdrop-blur-md');
+                nav.classList.remove('shadow-lg');
                 nav.style.transform = 'translateY(0)';
             }
             
@@ -899,14 +1014,14 @@
                     // Simulate form submission
                     setTimeout(() => {
                         submitButton.textContent = 'Message Sent!';
-                        submitButton.classList.remove('from-primary', 'to-accent');
-                        submitButton.classList.add('from-green-600', 'to-green-700');
+                        submitButton.classList.remove('bg-teal');
+                        submitButton.classList.add('bg-green-600');
                         
                         setTimeout(() => {
                             submitButton.textContent = originalText;
                             submitButton.disabled = false;
-                            submitButton.classList.remove('from-green-600', 'to-green-700');
-                            submitButton.classList.add('from-primary', 'to-accent');
+                            submitButton.classList.remove('bg-green-600');
+                            submitButton.classList.add('bg-teal');
                             form.reset();
                         }, 2000);
                     }, 1000);
